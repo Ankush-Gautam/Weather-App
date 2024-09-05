@@ -12,22 +12,25 @@ function handleSearch() {
 
     const cityName = document.querySelector('#city-name').value;
 
-    try {
-      const weatherData = await getWeatherData(cityName);
-      displayWeather(weatherData);
-    } catch (error) {
-      document.querySelector(
-        '.display-weather'
-      ).textContent = `Sever Error: ${error.message}`;
-    }
+    handleFetchedData(cityName);
   });
+}
+
+async function handleFetchedData(cityName) {
+  try {
+    const weatherData = await getWeatherData(cityName);
+    displayWeather(weatherData);
+  } catch (error) {
+    document.querySelector(
+      '.display-weather'
+    ).textContent = `Sever Error: ${error.message}`;
+  }
 }
 
 async function getWeatherData(city) {
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric`;
 
   const response = await fetch(apiURL);
-
   if (!response.ok) throw new Error('Failed to fetch weather data.');
 
   const data = await response.json();
@@ -64,4 +67,7 @@ function displayWeather(data) {
   card.append(degree, city, info, otherInfos);
 }
 
-document.addEventListener('DOMContentLoaded', handleSearch);
+document.addEventListener('DOMContentLoaded', () => {
+  handleFetchedData('London'); //default on load
+  handleSearch(); //listen for search
+});
