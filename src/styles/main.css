@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: lightgray;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+input,
+button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.55rem;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+
+button:active {
+  scale: 1.02;
+}
+
+input {
+  max-width: 600px;
+  border: 2px solid black;
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+}
+
+.search-div {
+  display: flex;
+}
+
+main {
+  margin-top: 5rem;
+}
+
+.display-weather {
+  background: linear-gradient(90deg, rgb(240, 217, 85), rgb(142, 58, 211));
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.display-degree {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.display-city {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.display-info {
+  font-size: 2rem;
+}
+
+.other-info-card {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+span {
+  border-radius: 0.3rem;
+  background-color: black;
+  color: white;
+  padding: 0.3rem 0.6rem;
+}
